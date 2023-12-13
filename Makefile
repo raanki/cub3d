@@ -6,7 +6,7 @@
 #    By: ranki <ranki@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/17 09:49:26 by ranki             #+#    #+#              #
-#    Updated: 2023/12/13 22:12:07 by ranki            ###   ########.fr        #
+#    Updated: 2023/12/13 23:01:31 by ranki            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = cub3d
 SRC = main.c \
 srcs/exe/init_game.c\
 \
-srcs/exe/ray.c\
+srcs/exe/ray.c srcs/exe/ray_part2.c\
 \
 srcs/exe/render.c\
 \
