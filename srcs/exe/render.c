@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:01 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 21:34:11 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 22:48:43 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	draw_floor_ceiling(t_game *game, int ray, int t_pix, int b_pix)
 
 	i = b_pix;
 	while (i < S_H)
-		my_mlx_pixel_put(game, ray, i++, 0xB99470FF); // floor
+		my_mlx_pixel_put(game, ray, i++, COLOR_FLOOR);
 	i = 0;
 	while (i < t_pix)
-		my_mlx_pixel_put(game, ray, i++, 0x89CFF3FF); // ceiling
+		my_mlx_pixel_put(game, ray, i++, COLOR_CEILING);
 }
 
 int	which_wall(t_game *game, int flag)

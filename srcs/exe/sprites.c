@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 19:33:18 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 21:33:41 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 22:50:40 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	load_sprite(t_game *game)
 	int		i;
 
 	i = 0;
-	sprite_paths[0] = "srcs/exe/sprites/Brick.xpm";
-	sprite_paths[1] = "srcs/exe/sprites/Gold.xpm";
-	sprite_paths[2] = "srcs/exe/sprites/lawn.xpm";
-	sprite_paths[3] = "srcs/exe/sprites/pipe.xpm";
+	sprite_paths[0] = SPRITE_WEST;
+	sprite_paths[1] = SPRITE_EAST;
+	sprite_paths[2] = SPRITE_NORTH;
+	sprite_paths[3] = SPRITE_SOUTH;
 	while (i < 4)
 	{
 		game->sprite[i] = calloc(1, sizeof(t_sprite));

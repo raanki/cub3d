@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:05 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 21:23:17 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 22:50:43 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@
 # define ROTATION_SPEED 0.045
 # define PLAYER_SPEED 4
 # define M_PI 3.14159265358979323846 
+# define COLOR_CEILING 0xFF96AD00
+# define COLOR_FLOOR 0xFFFF00C3
+# define SPRITE_WEST "srcs/exe/sprites/one.xpm"
+# define SPRITE_EAST "srcs/exe/sprites/two.xpm"
+# define SPRITE_NORTH "srcs/exe/sprites/four.xpm"
+# define SPRITE_SOUTH "srcs/exe/sprites/three.xpm"
 
 //*****************************************************************
 //*****************************************************************
