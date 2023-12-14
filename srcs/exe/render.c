@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:01 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 22:48:43 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 23:30:41 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,9 @@ void draw_wall(t_game *game, int ray, int t_pix, int b_pix)
 
 	wall = which_wall(game, game->ray->flag);
     if (game->sprite)
-        draw_sprite_column(game, ray, t_pix, b_pix, ray % game->sprite[wall]->width, wall);
+	{
+		draw_sprite_column(game, ray, t_pix, b_pix, ray % game->sprite[wall]->width, wall);
+	}
 }
 
 

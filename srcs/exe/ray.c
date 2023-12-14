@@ -6,12 +6,17 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:11:56 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/13 22:54:16 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 23:09:22 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
+/**
+ * Fonction pour lancer les rayons depuis la caméra du joueur.
+ *
+ * @param game - Pointeur vers la structure de jeu.
+ */
 int	wall_hit(float x, float y, t_game *game)
 {
 	int	x_m;
@@ -28,7 +33,13 @@ int	wall_hit(float x, float y, t_game *game)
 			return (0);
 	return (1);
 }
-
+/**
+ * Calcule l'intersection horizontale d'un rayon avec les murs du jeu.
+ *
+ * @param game - Pointeur vers la structure de jeu.
+ * @param angl - Angle du rayon.
+ * @return La distance de l'intersection horizontale.
+ */
 float	get_h_inter(t_game *game, float angl)
 {
 	float	h_x;
@@ -53,7 +64,13 @@ float	get_h_inter(t_game *game, float angl)
 	return (sqrt(pow(h_x - game->player->plyr_x, 2)
 			+ pow(h_y - game->player->plyr_y, 2)));
 }
-
+/**
+ * Calcule l'intersection verticale d'un rayon avec les murs du jeu.
+ *
+ * @param game - Pointeur vers la structure de jeu.
+ * @param angl - Angle du rayon.
+ * @return La distance de l'intersection verticale.
+ */
 float	get_v_inter(t_game *game, float angl)
 {
 	float	v_x;
