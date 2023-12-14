@@ -6,7 +6,7 @@
 #    By: ranki <ranki@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/17 09:49:26 by ranki             #+#    #+#              #
-#    Updated: 2023/12/13 23:01:31 by ranki            ###   ########.fr        #
+#    Updated: 2023/12/14 19:46:21 by ranki            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ srcs/exe/render.c\
 srcs/exe/moove.c\
 \
 srcs/exe/utils.c\
+\
+srcs/exe/sprites.c\
 \
 
 OBJ = $(SRC:.c=.o)

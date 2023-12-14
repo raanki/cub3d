@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:01 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/13 22:38:16 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 21:34:11 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,34 +47,35 @@ void	draw_floor_ceiling(t_game *game, int ray, int t_pix, int b_pix)
 		my_mlx_pixel_put(game, ray, i++, 0x89CFF3FF); // ceiling
 }
 
-int	get_color(t_game *game, int flag)
+int	which_wall(t_game *game, int flag)
 {
 	game->ray->ray_ngl = nor_angle(game->ray->ray_ngl);
 	if (flag == 0)
 	{
 		if (game->ray->ray_ngl > M_PI / 2
 			&& game->ray->ray_ngl < 3 * (M_PI / 2))
-			return (0xB5B5B5FF); // west wall
+			return (0); // west wall
 		else
-			return (0xB5B5B5FF); // east wall
+			return (1); // east wall
 	}
 	else
 	{
 		if (game->ray->ray_ngl > 0 && game->ray->ray_ngl < M_PI)
-			return (0xF5F5F5FF); // south wall
+			return (2); // south wall
 		else
-			return (0xF5F5F5FF); // north wall
+			return (3); // north wall
 	}
 }
 
-void	draw_wall(t_game *game, int ray, int t_pix, int b_pix)
+void draw_wall(t_game *game, int ray, int t_pix, int b_pix)
 {
-	int	color;
+	int wall;
 
-	color = get_color(game, game->ray->flag);
-	while (t_pix < b_pix)
-		my_mlx_pixel_put(game, ray, t_pix++, color);
+	wall = which_wall(game, game->ray->flag);
+    if (game->sprite)
+        draw_sprite_column(game, ray, t_pix, b_pix, ray % game->sprite[wall]->width, wall);
 }
+
 
 void	render_wall(t_game *game, int ray)
 {

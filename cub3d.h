@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:05 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/13 22:53:52 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 21:23:17 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,24 @@ typedef struct s_mlx
 	int		endian;
 }	t_mlx;
 
+typedef struct s_sprite
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+}	t_sprite;
+
 typedef struct t_game
 {
 	t_player	*player;
 	t_ray		*ray;
 	t_map		*map;
 	t_mlx		*mlx;
+	t_sprite	**sprite;
 }				t_game;
 
 //************************************************************
@@ -122,5 +134,9 @@ void	init_ray(t_game *game);
 int		unit_circle(float angle, char c);
 int		inter_check(float angle, float *inter, float *step,
 			int is_horizon);
+void	my_mlx_pixel_put(t_game *game, int x, int y, int color);
+void	load_sprite(t_game *game);
+void	draw_sprite_column(t_game *game, int screen_x,
+			int start, int end, int sprite_x, int wich);
 
 #endif
