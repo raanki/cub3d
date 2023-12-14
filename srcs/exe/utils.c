@@ -6,27 +6,14 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:03 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 18:48:54 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 19:02:37 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3d.h"
 
-void	free_game(t_game *game)
+void	free_mlx(t_game *game)
 {
-	int	i;
-
-	i = 0;
-	while (game && game->map && game->map->map2d && game->map->map2d[i])
-		free(game->map->map2d[i++]);
-	if (game->map && game->map->map2d)
-		free(game->map->map2d);
-	if (game->map)
-		free(game->map);
-	if (game->player)
-		free(game->player);
-	if (game->ray)
-		free(game->ray);
 	if (game->mlx)
 	{
 		if (game->mlx->img)
@@ -43,6 +30,24 @@ void	free_game(t_game *game)
 		}
 		free(game->mlx);
 	}
+}
+
+void	free_game(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	while (game && game->map && game->map->map2d && game->map->map2d[i])
+		free(game->map->map2d[i++]);
+	if (game->map && game->map->map2d)
+		free(game->map->map2d);
+	if (game->map)
+		free(game->map);
+	if (game->player)
+		free(game->player);
+	if (game->ray)
+		free(game->ray);
+	free_mlx(game);
 	free(game);
 }
 
