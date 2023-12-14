@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:00 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/13 22:34:50 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/14 18:49:00 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	start_the_game(t_game *game)
 	if (!mlx)
 		exit(0);
 	game->mlx = mlx;
-	mlx->mlx_p = mlx_init();
+	game->mlx->mlx_p = mlx_init();
 	mlx->win_p = mlx_new_window(mlx->mlx_p, S_W, S_H, "Cub3D");
 	mlx->img = mlx_new_image(mlx->mlx_p, S_W, S_H);
 	init_the_player(game);
