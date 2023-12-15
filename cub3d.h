@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:05 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 23:13:27 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/15 18:20:58 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,5 +144,6 @@ void	my_mlx_pixel_put(t_game *game, int x, int y, int color);
 void	load_sprite(t_game *game);
 void	draw_sprite_column(t_game *game, int screen_x,
 			int start, int end, int sprite_x, int wich);
+int		ft_exit(void *param);
 
 #endif

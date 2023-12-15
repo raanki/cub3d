@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:03 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 21:39:30 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/15 18:21:07 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ void	free_mlx(t_game *game)
 		}
 		free(game->mlx);
 	}
+}
+int	ft_exit(void *param)
+{
+	t_game	*game;
+
+	game = param;
+	free_game(param);
+	exit(0);
 }
 
 void	free_game(t_game *game)

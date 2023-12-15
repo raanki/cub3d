@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:00 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/15 18:09:53 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/15 18:20:45 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	start_the_game(t_game *game)
 	mlx_loop_hook(mlx->mlx_p, &game_loop, game);
 	mlx_hook(game->mlx->win_p, KeyRelease, KeyReleaseMask, &ft_reles, game);
 	mlx_hook(mlx->win_p, KeyPress, KeyPressMask, mlx_key, game);
+	mlx_hook(mlx->win_p, 33, 1L << 17, ft_exit, game);
 	mlx_loop(mlx->mlx_p);
 }
 
