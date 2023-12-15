@@ -48,11 +48,16 @@ void	start_the_game(t_game *game)
 		exit(0);
 	game->mlx = mlx;
 	game->mlx->mlx_p = mlx_init();
+	if (!game->mlx->mlx_p) {
+		printf("Init est null\n");
+		exit (0);
+	}
 	game->sprite = calloc(4, sizeof(t_sprite *));
 	if (!game->sprite)
 		exit(0);
 	mlx->win_p = mlx_new_window(mlx->mlx_p, S_W, S_H, "Cub3D");
 	mlx->img = mlx_new_image(mlx->mlx_p, S_W, S_H);
+	exit(0);
 	load_sprite(game);
 	init_the_player(game);
 	mlx_loop_hook(mlx->mlx_p, &game_loop, game);
