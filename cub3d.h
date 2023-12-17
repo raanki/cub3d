@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:12:05 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/15 18:20:58 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/17 15:46:18 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@
 
 # define S_W 1900
 # define S_H 1000
-# define TILE_SIZE 30
+# define TILE_SIZE 64
 # define FOV 60
 # define ROTATION_SPEED 0.045
 # define PLAYER_SPEED 4
 # define M_PI 3.14159265358979323846 
 # define COLOR_CEILING 0xFF96AD00
 # define COLOR_FLOOR 0xFFFF00C3
-# define SPRITE_WEST "srcs/exe/sprites/one.xpm"
-# define SPRITE_EAST "srcs/exe/sprites/two.xpm"
-# define SPRITE_NORTH "srcs/exe/sprites/four.xpm"
-# define SPRITE_SOUTH "srcs/exe/sprites/three.xpm"
+# define SPRITE_WEST "srcs/exe/sprites/brown.xpm"
+# define SPRITE_EAST "srcs/exe/sprites/red.xpm"
+# define SPRITE_NORTH "srcs/exe/sprites/grey-sad.xpm"
+# define SPRITE_SOUTH "srcs/exe/sprites/sky-blue.xpm"
 
 //*****************************************************************
 //*****************************************************************
@@ -70,6 +70,10 @@ typedef struct s_ray
 	double	ray_ngl;
 	double	distance;
 	int		flag;
+	double  h_x;
+	double  h_y;
+	double  v_x;
+	double  v_y;
 }	t_ray;
 
 typedef struct s_map
@@ -129,7 +133,6 @@ void	init_the_player(t_game *game);
 t_game	*game_instance(void);
 void	cast_rays(t_game *game);
 void	render_wall(t_game *game, int ray);
-void	draw_wall(t_game *game, int ray, int t_pix, int b_pix);
 float	nor_angle(float angle);
 void	free_game(t_game *game);
 void	init_ray(t_game *game);

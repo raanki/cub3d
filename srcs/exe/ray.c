@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 22:11:56 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 23:09:22 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/17 14:41:52 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ float	get_h_inter(t_game *game, float angl)
 		h_x += x_step;
 		h_y += y_step;
 	}
+	game->ray->h_x = h_x;
+	game->ray->h_y = h_y;
 	return (sqrt(pow(h_x - game->player->plyr_x, 2)
 			+ pow(h_y - game->player->plyr_y, 2)));
 }
@@ -92,6 +94,8 @@ float	get_v_inter(t_game *game, float angl)
 		v_x += x_step;
 		v_y += y_step;
 	}
+	game->ray->v_x = v_x;
+	game->ray->v_y = v_y;
 	return (sqrt(pow(v_x - game->player->plyr_x, 2)
 			+ pow(v_y - game->player->plyr_y, 2)));
 }

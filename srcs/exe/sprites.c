@@ -6,7 +6,7 @@
 /*   By: ranki <ranki@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 19:33:18 by ranki             #+#    #+#             */
-/*   Updated: 2023/12/14 23:23:34 by ranki            ###   ########.fr       */
+/*   Updated: 2023/12/16 19:45:08 by ranki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,5 @@ void	load_sprite(t_game *game)
 		game->sprite[i]->height = height;
 		i++;
 	}
-}
-
-void draw_sprite_column(t_game *game, int screen_x, int start, int end, int sprite_x, int which)
-{
-    int color;
-    double sprite_scale_factor = (double)game->sprite[which]->height / (end - start);
-
-    for (int screen_y = start; screen_y < end; screen_y++)
-    {
-        int tex_y = (int)((screen_y - start) * sprite_scale_factor);
-        color = *(int *)(game->sprite[which]->addr + (tex_y * game->sprite[which]->line_length + sprite_x * (game->sprite[which]->bits_per_pixel / 8)));
-        my_mlx_pixel_put(game, screen_x, screen_y, color);
-    }
 }
 
